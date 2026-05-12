@@ -1,0 +1,6 @@
+case,normalized_classical_margin,peak_lambda,global_surrogate_min,classification
+baseline,1.24,0.83,1.24,stable by both criteria
+weak lens,1.11,1.08,1.18,local warning before global surrogate threshold
+high permeability,1.05,1.16,1.17,local warning before global surrogate threshold
+low fines reserve,1.08,1.12,1.19,local warning before global surrogate threshold
+combined adverse,0.96,1.34,1.05,local warning before global surrogate threshold

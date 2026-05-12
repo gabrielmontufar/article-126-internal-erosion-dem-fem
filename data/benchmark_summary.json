@@ -1,0 +1,282 @@
+{
+  "one_d": [
+    {
+      "n": 25,
+      "dx": 0.04,
+      "l2_error": 0.012092186553914587,
+      "max_error": 0.03180447258760066,
+      "mass_balance_error": 1.1102230246251565e-16,
+      "order_l2": NaN
+    },
+    {
+      "n": 50,
+      "dx": 0.02,
+      "l2_error": 0.0061932753427849496,
+      "max_error": 0.016910067107335447,
+      "mass_balance_error": 1.1102230246251565e-15,
+      "order_l2": 0.9653006492004949
+    },
+    {
+      "n": 100,
+      "dx": 0.01,
+      "l2_error": 0.0031338435586031133,
+      "max_error": 0.008722107653040823,
+      "mass_balance_error": 1.7763568394002505e-15,
+      "order_l2": 0.9827694250127056
+    },
+    {
+      "n": 200,
+      "dx": 0.005,
+      "l2_error": 0.0015762753126799727,
+      "max_error": 0.004429832327092931,
+      "mass_balance_error": 5.662137425588298e-15,
+      "order_l2": 0.99141362399009
+    },
+    {
+      "n": 400,
+      "dx": 0.0025,
+      "l2_error": 0.0007904825975554556,
+      "max_error": 0.0022323700694044657,
+      "mass_balance_error": 5.10702591327572e-15,
+      "order_l2": 0.995713931146344
+    }
+  ],
+  "history_key": [
+    {
+      "time_h": 0.0,
+      "lambda_connectivity": 0.5922251745967739,
+      "global_degradation_surrogate": 1.4777961057886468,
+      "g_internal_erosion": 0.40777482540322607,
+      "g_global": 0.47779610578864684,
+      "dem_active_cells": 0,
+      "mean_fines_loss": 0.0002919283605627753,
+      "max_permeability_ratio": 1.051997684536522
+    },
+    {
+      "time_h": 20.0,
+      "lambda_connectivity": 1.378106693966835,
+      "global_degradation_surrogate": 1.3065149719300935,
+      "g_internal_erosion": -0.37810669396683494,
+      "g_global": 0.30651497193009347,
+      "dem_active_cells": 202,
+      "mean_fines_loss": 0.011087834918535875,
+      "max_permeability_ratio": 1.8025542957341663
+    },
+    {
+      "time_h": 30.0,
+      "lambda_connectivity": 4.133912362132491,
+      "global_degradation_surrogate": 0.7142332068927418,
+      "g_internal_erosion": -3.1339123621324907,
+      "g_global": -0.28576679310725817,
+      "dem_active_cells": 588,
+      "mean_fines_loss": 0.02748572427596888,
+      "max_permeability_ratio": 4.0949193064674745
+    },
+    {
+      "time_h": 40.0,
+      "lambda_connectivity": 6.202053936100555,
+      "global_degradation_surrogate": 0.31072557601803186,
+      "g_internal_erosion": -5.202053936100555,
+      "g_global": -0.6892744239819681,
+      "dem_active_cells": 784,
+      "mean_fines_loss": 0.03436353203584325,
+      "max_permeability_ratio": 5.777142142439973
+    },
+    {
+      "time_h": 60.0,
+      "lambda_connectivity": 6.70553436055116,
+      "global_degradation_surrogate": 0.2147605864914386,
+      "g_internal_erosion": -5.70553436055116,
+      "g_global": -0.7852394135085614,
+      "dem_active_cells": 831,
+      "mean_fines_loss": 0.0357375841649422,
+      "max_permeability_ratio": 6.18833465502598
+    }
+  ],
+  "lead_time": [
+    {
+      "t_lambda_equals_1_h": 16.85887593342655,
+      "t_fs_equals_1_h": 25.844775398243087,
+      "lead_time_h": 8.985899464816537,
+      "active_dem_cells_at_t_lambda_plus": 81,
+      "active_domain_fraction_at_t_lambda_plus": 0.017578125
+    }
+  ],
+  "mesh_independence": [
+    {
+      "grid": "48 x 24",
+      "cells": 1152,
+      "t_lambda_equals_1_h": 17.011397937634946,
+      "t_fs_equals_1_h": 26.27281784229231,
+      "lead_time_h": 9.261419904657362,
+      "peak_lambda": 6.239601993641778
+    },
+    {
+      "grid": "96 x 48",
+      "cells": 4608,
+      "t_lambda_equals_1_h": 16.85887593342655,
+      "t_fs_equals_1_h": 25.844775398243087,
+      "lead_time_h": 8.985899464816537,
+      "peak_lambda": 6.70553436055116
+    },
+    {
+      "grid": "192 x 96",
+      "cells": 18432,
+      "t_lambda_equals_1_h": 16.83226103606849,
+      "t_fs_equals_1_h": 25.870766676325708,
+      "lead_time_h": 9.038505640257217,
+      "peak_lambda": 6.6542080766529
+    }
+  ],
+  "dem_window_sensitivity": [
+    {
+      "case": "low bond resistance",
+      "bond_resistance_factor": 0.75,
+      "normal_stiffness_factor": 1.0,
+      "damping_factor": 1.0,
+      "returned_detachment_multiplier": 1.31,
+      "peak_lambda_adjusted": 7.174921765789741
+    },
+    {
+      "case": "baseline",
+      "bond_resistance_factor": 1.0,
+      "normal_stiffness_factor": 1.0,
+      "damping_factor": 1.0,
+      "returned_detachment_multiplier": 1.0,
+      "peak_lambda_adjusted": 6.70553436055116
+    },
+    {
+      "case": "high bond resistance",
+      "bond_resistance_factor": 1.25,
+      "normal_stiffness_factor": 1.0,
+      "damping_factor": 1.0,
+      "returned_detachment_multiplier": 0.78,
+      "peak_lambda_adjusted": 6.30320229891809
+    },
+    {
+      "case": "high DEM damping",
+      "bond_resistance_factor": 1.0,
+      "normal_stiffness_factor": 1.0,
+      "damping_factor": 1.35,
+      "returned_detachment_multiplier": 0.91,
+      "peak_lambda_adjusted": 6.504368329734625
+    }
+  ],
+  "sensitivity": [
+    {
+      "critical_gradient_scale": 0.75,
+      "peak_lambda": 8.940712480734879,
+      "warning_time_h": 12.5,
+      "minimum_global_surrogate": -0.2554211217249298
+    },
+    {
+      "critical_gradient_scale": 0.8,
+      "peak_lambda": 8.38191795068895,
+      "warning_time_h": 14.0,
+      "minimum_global_surrogate": -0.13792605161712146
+    },
+    {
+      "critical_gradient_scale": 0.85,
+      "peak_lambda": 7.8888639535896,
+      "warning_time_h": 15.0,
+      "minimum_global_surrogate": -0.0342539309337615
+    },
+    {
+      "critical_gradient_scale": 0.9,
+      "peak_lambda": 7.450593733945733,
+      "warning_time_h": 15.5,
+      "minimum_global_surrogate": 0.05789906522922528
+    },
+    {
+      "critical_gradient_scale": 0.9500000000000001,
+      "peak_lambda": 7.058457221632799,
+      "warning_time_h": 16.5,
+      "minimum_global_surrogate": 0.14035174600663458
+    },
+    {
+      "critical_gradient_scale": 1.0,
+      "peak_lambda": 6.70553436055116,
+      "warning_time_h": 17.0,
+      "minimum_global_surrogate": 0.2145591587063027
+    },
+    {
+      "critical_gradient_scale": 1.05,
+      "peak_lambda": 6.386223200524913,
+      "warning_time_h": 17.5,
+      "minimum_global_surrogate": 0.2816991987679075
+    },
+    {
+      "critical_gradient_scale": 1.1,
+      "peak_lambda": 6.095940327773781,
+      "warning_time_h": 18.0,
+      "minimum_global_surrogate": 0.3427355988239117
+    },
+    {
+      "critical_gradient_scale": 1.1500000000000001,
+      "peak_lambda": 5.83089944395753,
+      "warning_time_h": 18.5,
+      "minimum_global_surrogate": 0.39846448583156757
+    },
+    {
+      "critical_gradient_scale": 1.2000000000000002,
+      "peak_lambda": 5.587945300459299,
+      "warning_time_h": 19.0,
+      "minimum_global_surrogate": 0.44954929892191897
+    },
+    {
+      "critical_gradient_scale": 1.25,
+      "peak_lambda": 5.364427488440928,
+      "warning_time_h": 19.5,
+      "minimum_global_surrogate": 0.4965473269650422
+    },
+    {
+      "critical_gradient_scale": 1.3000000000000003,
+      "peak_lambda": 5.158103354270122,
+      "warning_time_h": 19.5,
+      "minimum_global_surrogate": 0.5399301220817715
+    },
+    {
+      "critical_gradient_scale": 1.35,
+      "peak_lambda": 4.967062489297155,
+      "warning_time_h": 20.0,
+      "minimum_global_surrogate": 0.5800993768194835
+    }
+  ],
+  "comparison": [
+    {
+      "case": "baseline",
+      "normalized_classical_margin": 1.24,
+      "peak_lambda": 0.83,
+      "global_surrogate_min": 1.24,
+      "classification": "stable by both criteria"
+    },
+    {
+      "case": "weak lens",
+      "normalized_classical_margin": 1.11,
+      "peak_lambda": 1.08,
+      "global_surrogate_min": 1.18,
+      "classification": "local warning before global surrogate threshold"
+    },
+    {
+      "case": "high permeability",
+      "normalized_classical_margin": 1.05,
+      "peak_lambda": 1.16,
+      "global_surrogate_min": 1.17,
+      "classification": "local warning before global surrogate threshold"
+    },
+    {
+      "case": "low fines reserve",
+      "normalized_classical_margin": 1.08,
+      "peak_lambda": 1.12,
+      "global_surrogate_min": 1.19,
+      "classification": "local warning before global surrogate threshold"
+    },
+    {
+      "case": "combined adverse",
+      "normalized_classical_margin": 0.96,
+      "peak_lambda": 1.34,
+      "global_surrogate_min": 1.05,
+      "classification": "local warning before global surrogate threshold"
+    }
+  ]
+}
