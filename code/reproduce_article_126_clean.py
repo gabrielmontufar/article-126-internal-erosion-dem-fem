@@ -112,7 +112,7 @@ def run() -> None:
     one_df.to_csv(DATA / "one_dimensional_convergence.csv", index=False)
 
     history, snapshots = synthetic_history(96, 48)
-    history.to_csv(DATA / "two_dimensional_warning_history.csv", index=False)
+    history.to_csv(DATA / "two_dimensional_screening_history.csv", index=False)
     t_lambda = crossing_time(history, "lambda_connectivity", 1.0, "up")
     t_global = crossing_time(history, "global_degradation_surrogate", 1.0, "down")
     lead = pd.DataFrame(
@@ -126,7 +126,7 @@ def run() -> None:
             }
         ]
     )
-    lead.to_csv(DATA / "warning_lead_time_interpolated.csv", index=False)
+    lead.to_csv(DATA / "screening_lead_interval_interpolated.csv", index=False)
 
     mesh_rows = []
     for nx, ny in [(48, 24), (96, 48), (192, 96)]:
@@ -221,7 +221,7 @@ def make_figures(one_df: pd.DataFrame, history: pd.DataFrame, sens: pd.DataFrame
     ax.grid(True, alpha=0.25)
     ax.legend(frameon=False)
     fig.tight_layout()
-    fig.savefig(FIGURES / "Figure 2 early warning lead time.png")
+    fig.savefig(FIGURES / "Figure 2 synthetic screening lead interval.png")
     plt.close(fig)
 
     ie, _, _ = snapshots[40]
@@ -230,10 +230,10 @@ def make_figures(one_df: pd.DataFrame, history: pd.DataFrame, sens: pd.DataFrame
     ax.contour(ie, levels=[1.0], colors="white", linewidths=1.4, origin="lower", extent=[0, 1, 0, 1])
     ax.set_xlabel("Normalized dam length")
     ax.set_ylabel("Normalized dam height")
-    ax.set_title("Risk-activated DEM window at t = 40 h")
+    ax.set_title("Connectivity-activated DEM window at t = 40 h")
     fig.colorbar(im, ax=ax, fraction=0.045, pad=0.03).set_label("Erosive intensity")
     fig.tight_layout()
-    fig.savefig(FIGURES / "Figure 3 risk activated DEM window.png")
+    fig.savefig(FIGURES / "Figure 3 connectivity activated DEM window.png")
     plt.close(fig)
 
     fig, ax = plt.subplots(figsize=(7.0, 4.0))

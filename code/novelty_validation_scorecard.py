@@ -208,7 +208,7 @@ def main() -> None:
         "gradient_only_sensitivity": float(metrics.loc[metrics["method"] == "gradient_only_prediction", "sensitivity"].iloc[0]),
         "path_history_sensitivity": float(metrics.loc[metrics["method"] == "path_history_prediction", "sensitivity"].iloc[0]),
         "path_history_accuracy": float(metrics.loc[metrics["method"] == "path_history_prediction", "accuracy"].iloc[0]),
-        "sample_size_warning": "Small external validation set; conclusions remain bounded to screening logic.",
+        "sample_size_note": "Small external validation set; conclusions remain bounded to screening logic.",
     }
     (DATA / "novelty_validation_summary.json").write_text(json.dumps(summary, indent=2), encoding="utf-8")
 

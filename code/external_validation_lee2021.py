@@ -75,9 +75,9 @@ def run() -> None:
                 "scope_limit": "Phenomenological external validation of the need for path/history-sensitive screening; not quantitative calibration to a laboratory column.",
             },
             {
-                "reviewer_challenge": "A dam-scale screening method must not present a synthetic lead interval as a physical warning time.",
+                "reviewer_challenge": "A dam-scale screening method must not present a synthetic lead interval as physical operational timing.",
                 "external_evidence": "The long-term tests show delayed changes over hours to days depending on fabric and clogging, so physical timing is material- and history-dependent.",
-                "manuscript_response": "The revised manuscript labels the reported interval as synthetic/numerically defined and explicitly rejects operational warning claims.",
+                "manuscript_response": "The revised manuscript labels the reported interval as synthetic/numerically defined and explicitly rejects operational alert claims.",
                 "status": "passed_for_scope",
                 "scope_limit": "Timing remains synthetic until calibrated with laboratory, centrifuge, field or instrumented-dam data.",
             },
@@ -99,7 +99,7 @@ def run() -> None:
         "external_observation_count": int(len(observations)),
         "challenge_count": int(len(challenge)),
         "passed_for_bounded_scope": int((challenge["status"] == "passed_for_scope").sum()),
-        "not_claimed": "No quantitative calibration, field validation, or operational early-warning validation is claimed.",
+        "not_claimed": "No quantitative field calibration, field validation, or operational alert-system validation is claimed.",
     }
     (DATA / "external_validation_summary.json").write_text(json.dumps(summary, indent=2), encoding="utf-8")
 

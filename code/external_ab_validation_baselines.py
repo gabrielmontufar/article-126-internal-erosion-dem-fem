@@ -361,7 +361,7 @@ def main() -> None:
         "best_baseline_holdout_k_over_k0_mae": float(best_baseline["holdout_k_over_k0_mae"]),
         "strict_validation_comparison_score_mrnb_post_ab": 15,
         "strict_total_mrnb_post_ab_validation": 92,
-        "scope_limit": "This is semi-blind external laboratory-state validation for the screening framework. Holdout rows are published laboratory states from Lee et al. (2021), not synthetic cases and not field validation of a complete dam-warning model.",
+        "scope_limit": "This is semi-blind external laboratory-state validation for the screening framework. Holdout rows are published laboratory states from Lee et al. (2021), not synthetic cases and not field validation of a field-deployed dam-safety model.",
     }
     sentence = (
         "The screening model was calibrated only with subset A and validated against subset B, "

@@ -1,3 +1,1 @@
-﻿https://github.com/gabrielmontufar/article-126-internal-erosion-dem-fem/releases/tag/v1.0.3-cg-submission-20260531
-
-
+https://github.com/gabrielmontufar/article-126-internal-erosion-dem-fem/releases/tag/v1.0.4-cg-scope-fit-20260531

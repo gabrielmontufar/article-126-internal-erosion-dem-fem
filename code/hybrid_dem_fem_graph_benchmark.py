@@ -356,7 +356,7 @@ def run() -> None:
         "implemented_dem_window": "deterministic bonded-particle micro-window with bond breakage, hydraulic drag, damping, porosity and permeability return",
         "fem_nodes": int(mesh.nodes.shape[0]),
         "fem_triangles": int(mesh.triangles.shape[0]),
-        "dijkstra_warning_time_h": t_lambda,
+        "dijkstra_screening_crossing_time_h": t_lambda,
         "global_surrogate_crossing_time_h": t_global,
         "synthetic_lead_interval_h": float(t_global - t_lambda) if math.isfinite(t_global) else None,
         "final_dem_detached_fraction": float(final_dem["detached_fraction"]),

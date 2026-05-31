@@ -3,5 +3,5 @@
   "external_observation_count": 4,
   "challenge_count": 3,
   "passed_for_bounded_scope": 3,
-  "not_claimed": "No quantitative calibration, field validation, or operational early-warning validation is claimed."
+  "not_claimed": "No quantitative field calibration, field validation, or operational alert-system validation is claimed."
 }

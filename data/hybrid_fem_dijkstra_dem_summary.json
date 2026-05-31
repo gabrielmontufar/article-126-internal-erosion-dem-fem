@@ -5,7 +5,7 @@
   "implemented_dem_window": "deterministic bonded-particle micro-window with bond breakage, hydraulic drag, damping, porosity and permeability return",
   "fem_nodes": 861,
   "fem_triangles": 1600,
-  "dijkstra_warning_time_h": 17.0,
+  "dijkstra_screening_crossing_time_h": 17.0,
   "global_surrogate_crossing_time_h": 31.0,
   "synthetic_lead_interval_h": 14.0,
   "final_dem_detached_fraction": 1.0,
