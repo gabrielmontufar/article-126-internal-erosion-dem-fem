@@ -2,7 +2,9 @@
 
 This note supports the manuscript section "Mathematical consistency of the
 screening operator". It documents the theoretical role of the
-FEM-Dijkstra-DEM workflow without changing the bounded screening claim.
+FEM-Dijkstra-DEM workflow without changing the bounded screening claim. The
+operator is state-bounded, while `Lambda` is a positive threshold ratio that is
+not bounded above; bounded displays use `Lambda_bar`.
 
 ## Operator view
 
@@ -71,6 +73,55 @@ threshold is directly interpretable at `Lambda = 1`.
 - `kappa_DEM`: DEM-returned permeability multiplier.
 - `eta_DEM`: DEM-returned detachment multiplier.
 - `m_f,loss`: detached fine mass returned by the local DEM window.
+
+## Weight constraints
+
+For the normalized diagnostic class used to interpret the erosive-connectivity
+cost, the weights are constrained as:
+
+| Weight | Indicator | Baseline | Audit range | Constraint |
+|---|---|---|
+| `alpha` | hydraulic-gradient term | `0.33` | `0.25-0.45` | `alpha >= 0` |
+| `beta` | permeability-amplification term | `0.10` | `0.05-0.20` | `beta >= 0` |
+| `gamma` | damage term | `0.35` | `0.25-0.45` | `gamma >= 0` |
+| `delta` | fines-loss term | `0.22` | `0.15-0.30` | `delta >= 0` |
+| `sum` | all terms | `1.00` | `1.00` | `alpha + beta + gamma + delta = 1` |
+
+with
+
+`alpha + beta + gamma + delta = 1`.
+
+The implemented benchmark uses the product intensity in Eq. (7) of the
+manuscript. The baseline values are normalized relative sensitivity weights
+corresponding to the implemented exponent set for the hydraulic-gradient,
+permeability-amplification, damage and fines-loss terms. They define the
+admissible theoretical class and prevent negative path rewards in equivalent
+additive-cost interpretations; they are not universal probabilities or
+field-calibrated constants.
+
+## Proposition 1
+
+For a fixed mesh, fixed boundary conditions and fixed normalized state `X(t)`,
+assume that at least one exit-to-source path exists, that `epsilon > 0`, and
+that all graph weights are non-negative and finite. Then the selective
+activation operator is well-defined:
+
+- a minimum-cost path `P*(t)` exists;
+- `Lambda(t)` is a finite positive threshold ratio;
+- `Lambda_bar(t) = Lambda(t) / [1 + Lambda(t)]` lies in `[0, 1)`;
+- the activated DEM set `ADEM(t)` is deterministic when ties are resolved by a
+  fixed cell-order rule.
+
+Proof sketch: the graph has finitely many cells and edges, and all admissible
+edge costs are non-negative and finite. The set of exit-to-source simple paths
+is non-empty by assumption and finite for a finite graph, so a path with minimum
+accumulated cost exists. Dijkstra's algorithm is applicable because no edge has
+negative cost. Since `epsilon > 0`, the denominator in the graph-cost equation
+is positive, the accumulated path cost is positive for non-zero path length, and
+`Lambda(t) = Lref / cost(P*)` is finite and positive for finite `Lref`. The
+bounded transform maps any finite positive `Lambda` to `[0, 1)`. A fixed
+cell-order tie break makes the selected path, activation set and DEM closure
+call deterministic for a given state.
 
 ## DEM-to-continuum closure
 
