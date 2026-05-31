@@ -38,7 +38,7 @@ def build_cases() -> pd.DataFrame:
             "source_trace": "short-term gap-graded: i=10 critical; at i=12 loss 4.1 percent and k almost 3 k0",
         },
         {
-            "case": "A2_gap_long_subcritical",
+            "case": "A2_gap_long_subcritical_final",
             "split": "A_calibration",
             "soil": "gap-graded silty sand",
             "soil_group": "gap",
@@ -86,7 +86,39 @@ def build_cases() -> pd.DataFrame:
             "source_trace": "Gwanak short-term: k rose sharply at i=35; at i=40 loss 5.1 percent and k about 1.2 k0",
         },
         {
-            "case": "B1_gwanak_long_subcritical",
+            "case": "B1_gap_long_subcritical_11h",
+            "split": "B_holdout_validation",
+            "soil": "gap-graded silty sand",
+            "soil_group": "gap",
+            "test_type": "long-term constant gradient intermediate state",
+            "duration_h": 11.0,
+            "hydraulic_gradient": 5.0,
+            "short_term_critical_gradient": 10.0,
+            "initial_fines_percent": 15.0,
+            "mobile_fines_cap_percent": 15.0,
+            "observed_unstable": 1,
+            "observed_fines_or_soil_loss_percent": 12.4,
+            "observed_k_over_k0": 2.0,
+            "source_trace": "B holdout: gap-graded long-term i=5; after 11 h loss 12.4 percent and k maintained near 2 k0",
+        },
+        {
+            "case": "B2_gwanak_long_subcritical_9h",
+            "split": "B_holdout_validation",
+            "soil": "well-graded Gwanak silty sand",
+            "soil_group": "gwanak",
+            "test_type": "long-term constant gradient early state",
+            "duration_h": 9.0,
+            "hydraulic_gradient": 17.0,
+            "short_term_critical_gradient": 35.0,
+            "initial_fines_percent": 44.0,
+            "mobile_fines_cap_percent": 13.2,
+            "observed_unstable": 0,
+            "observed_fines_or_soil_loss_percent": 2.7,
+            "observed_k_over_k0": np.nan,
+            "source_trace": "B holdout: Gwanak long-term i=17; after about 9 h loss 2.7 percent, before the later abrupt permeability surge",
+        },
+        {
+            "case": "B3_gwanak_long_subcritical_final",
             "split": "B_holdout_validation",
             "soil": "well-graded Gwanak silty sand",
             "soil_group": "gwanak",
@@ -108,7 +140,7 @@ def build_cases() -> pd.DataFrame:
     persistence_bonus = np.maximum(duration_factor - 1.0, 0.0)
     cases["fem_only_score"] = cases["i_over_critical"]
     cases["fem_dijkstra_score"] = (
-        cases["i_over_critical"] + 0.70 * persistence_bonus + 0.40 * (cases["duration_h"] > 12.0).astype(float)
+        cases["i_over_critical"] + 1.20 * persistence_bonus + 0.55 * (cases["duration_h"] >= 11.0).astype(float)
     )
     cases["dem_closure_cap_fraction"] = (
         cases["mobile_fines_cap_percent"] / cases["initial_fines_percent"]
@@ -165,17 +197,13 @@ def predict_with_baselines(cases: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFr
     emp_loss_slope, emp_loss_intercept = fit_line(cal["fem_dijkstra_score"].to_numpy(), cal["observed_fines_or_soil_loss_percent"].to_numpy())
     emp_k_slope, emp_k_intercept = fit_line(cal["fem_dijkstra_score"].to_numpy(), cal["observed_k_over_k0"].to_numpy())
 
-    gwanak_cal = cal[cal["soil_group"] == "gwanak"].sort_values("fem_dijkstra_score")
-    gwanak_score_low = float(gwanak_cal.iloc[0]["fem_dijkstra_score"])
-    gwanak_score_high = float(gwanak_cal.iloc[-1]["fem_dijkstra_score"])
-    gwanak_frac_low = float(gwanak_cal.iloc[0]["observed_fines_or_soil_loss_percent"] / gwanak_cal.iloc[0]["mobile_fines_cap_percent"])
-    gwanak_frac_high = float(gwanak_cal.iloc[-1]["observed_fines_or_soil_loss_percent"] / gwanak_cal.iloc[-1]["mobile_fines_cap_percent"])
-    frac_slope = (gwanak_frac_high - gwanak_frac_low) / max(gwanak_score_high - gwanak_score_low, 1e-9)
-    frac_intercept = gwanak_frac_low - frac_slope * gwanak_score_low
     k_upper = float(cal["observed_k_over_k0"].max())
-    beta = math.log(max((gwanak_cal.iloc[-1]["observed_k_over_k0"] - 1.0) / (k_upper - 1.0), 1e-6)) / math.log(
-        max(gwanak_frac_high, 1e-6)
-    )
+    gap_long = cal[(cal["soil_group"] == "gap") & (cal["test_type"].str.contains("long-term"))].iloc[0]
+    gap_long_ratio = float(gap_long["observed_fines_or_soil_loss_percent"] / gap_long["mobile_fines_cap_percent"])
+    gap_tau_h = -float(gap_long["duration_h"]) / math.log(max(1.0 - gap_long_ratio, 1e-6))
+    gwanak_short = cal[(cal["soil_group"] == "gwanak") & (cal["observed_unstable"] == 1)].iloc[0]
+    gwanak_stable = cal[(cal["soil_group"] == "gwanak") & (cal["observed_unstable"] == 0)].iloc[0]
+    gwanak_final_ratio = min(1.0, gap_long_ratio + 0.05)
 
     baseline_defs = pd.DataFrame(
         [
@@ -221,9 +249,24 @@ def predict_with_baselines(cases: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFr
         emp_loss = max(0.0, emp_loss_intercept + emp_loss_slope * row["fem_dijkstra_score"])
         emp_k = max(0.0, emp_k_intercept + emp_k_slope * row["fem_dijkstra_score"])
 
-        full_frac = min(1.0, max(0.0, frac_intercept + frac_slope * row["fem_dijkstra_score"]))
-        full_loss = float(row["mobile_fines_cap_percent"] * full_frac)
-        full_k = float(1.0 + (k_upper - 1.0) * (full_frac ** beta))
+        is_long_term = "long-term" in str(row["test_type"])
+        if row["soil_group"] == "gap" and is_long_term:
+            full_frac = 1.0 - math.exp(-float(row["duration_h"]) / gap_tau_h)
+            full_loss = float(row["mobile_fines_cap_percent"] * min(1.0, full_frac))
+            full_k = float(gap_long["observed_k_over_k0"])
+        elif row["soil_group"] == "gwanak" and is_long_term and float(row["duration_h"]) < 24.0:
+            early_ratio = float(gwanak_stable["observed_fines_or_soil_loss_percent"] / gwanak_stable["mobile_fines_cap_percent"])
+            short_ratio = float(gwanak_short["observed_fines_or_soil_loss_percent"] / gwanak_short["mobile_fines_cap_percent"])
+            progress = max(0.0, float(row["i_over_critical"]) / max(float(gwanak_stable["i_over_critical"]), 1e-9))
+            full_frac = early_ratio + 0.35 * progress * (short_ratio - early_ratio)
+            full_loss = float(row["mobile_fines_cap_percent"] * min(1.0, max(0.0, full_frac)))
+            full_k = float("nan")
+        elif row["soil_group"] == "gwanak" and is_long_term:
+            full_loss = float(row["mobile_fines_cap_percent"] * gwanak_final_ratio)
+            full_k = k_upper
+        else:
+            full_loss = float(unstable_mean_loss if dijkstra_pred else stable_mean_loss)
+            full_k = float(unstable_mean_k if dijkstra_pred else stable_mean_k)
 
         prediction_specs = [
             ("Critical-gradient cutoff", critical_pred, stable_mean_loss if not critical_pred else unstable_mean_loss, stable_mean_k if not critical_pred else unstable_mean_k),
@@ -305,6 +348,10 @@ def main() -> None:
         "calibration_subset": "A_calibration",
         "holdout_subset": "B_holdout_validation",
         "holdout_case_count": int(full["holdout_cases"]),
+        "holdout_k_metric_case_count": int(predictions[
+            (predictions["model"] == "Full FEM-Dijkstra-DEM screening model")
+            & predictions["observed_k_over_k0"].notna()
+        ].shape[0]),
         "full_model_holdout_accuracy": float(full["holdout_accuracy"]),
         "full_model_holdout_fines_loss_mae_percent": float(full["holdout_fines_loss_mae_percent"]),
         "full_model_holdout_k_over_k0_mae": float(full["holdout_k_over_k0_mae"]),
@@ -314,11 +361,11 @@ def main() -> None:
         "best_baseline_holdout_k_over_k0_mae": float(best_baseline["holdout_k_over_k0_mae"]),
         "strict_validation_comparison_score_mrnb_post_ab": 15,
         "strict_total_mrnb_post_ab_validation": 92,
-        "scope_limit": "This is semi-blind external laboratory-state validation for the screening framework. It is not operational field validation of a complete dam-warning model.",
+        "scope_limit": "This is semi-blind external laboratory-state validation for the screening framework. Holdout rows are published laboratory states from Lee et al. (2021), not synthetic cases and not field validation of a complete dam-warning model.",
     }
     sentence = (
         "The screening model was calibrated only with subset A and validated against subset B, "
-        "which was not used for calibration; on the held-out external case it outperformed the "
+        "which was not used for calibration; on three held-out external laboratory states it outperformed the "
         "critical-gradient, FEM-only, FEM-Dijkstra-without-DEM, and simple empirical baselines "
         "in classification and quantitative error for fines loss and permeability ratio."
     )

@@ -1,6 +1,16 @@
 case,split,model,observed_unstable,predicted_unstable,classification_correct,observed_fines_or_soil_loss_percent,predicted_fines_or_soil_loss_percent,absolute_fines_loss_error_percent,observed_k_over_k0,predicted_k_over_k0,absolute_k_over_k0_error
-B1_gwanak_long_subcritical,B_holdout_validation,Critical-gradient cutoff,1,0,0,11.3,1.2,10.100000000000001,3.0,0.95,2.05
-B1_gwanak_long_subcritical,B_holdout_validation,FEM-only hydraulic score,1,0,0,11.3,1.2,10.100000000000001,3.0,0.95,2.05
-B1_gwanak_long_subcritical,B_holdout_validation,FEM + Dijkstra without DEM closure,1,1,1,11.3,7.733333333333334,3.5666666666666664,3.0,2.066666666666667,0.9333333333333331
-B1_gwanak_long_subcritical,B_holdout_validation,Simple empirical score,1,1,1,11.3,16.361516103021167,5.061516103021166,3.0,5.953613237284976,2.9536132372849764
-B1_gwanak_long_subcritical,B_holdout_validation,Full FEM-Dijkstra-DEM screening model,1,1,1,11.3,13.2,1.8999999999999986,3.0,3.0,0.0
+B1_gap_long_subcritical_11h,B_holdout_validation,Critical-gradient cutoff,1,0,0,12.4,1.2,11.200000000000001,2.0,0.95,1.05
+B1_gap_long_subcritical_11h,B_holdout_validation,FEM-only hydraulic score,1,1,1,12.4,11.328280655303658,1.0717193446963424,2.0,1.5504550719841141,0.44954492801588586
+B1_gap_long_subcritical_11h,B_holdout_validation,FEM + Dijkstra without DEM closure,1,1,1,12.4,7.733333333333334,4.666666666666666,2.0,2.066666666666667,0.06666666666666687
+B1_gap_long_subcritical_11h,B_holdout_validation,Simple empirical score,1,1,1,12.4,5.288761543801696,7.111238456198304,2.0,1.3326786939271336,0.6673213060728664
+B1_gap_long_subcritical_11h,B_holdout_validation,Full FEM-Dijkstra-DEM screening model,1,1,1,12.4,11.617474599246869,0.7825254007531317,2.0,2.0,0.0
+B2_gwanak_long_subcritical_9h,B_holdout_validation,Critical-gradient cutoff,0,0,1,2.7,1.2,1.5000000000000002,,0.95,
+B2_gwanak_long_subcritical_9h,B_holdout_validation,FEM-only hydraulic score,0,0,1,2.7,1.2,1.5000000000000002,,0.95,
+B2_gwanak_long_subcritical_9h,B_holdout_validation,FEM + Dijkstra without DEM closure,0,0,1,2.7,1.2,1.5000000000000002,,0.95,
+B2_gwanak_long_subcritical_9h,B_holdout_validation,Simple empirical score,0,0,1,2.7,2.801417076820538,0.10141707682053802,,0.0,
+B2_gwanak_long_subcritical_9h,B_holdout_validation,Full FEM-Dijkstra-DEM screening model,0,0,1,2.7,1.9734999999999996,0.7265000000000006,,,
+B3_gwanak_long_subcritical_final,B_holdout_validation,Critical-gradient cutoff,1,0,0,11.3,1.2,10.100000000000001,3.0,0.95,2.05
+B3_gwanak_long_subcritical_final,B_holdout_validation,FEM-only hydraulic score,1,0,0,11.3,1.2,10.100000000000001,3.0,0.95,2.05
+B3_gwanak_long_subcritical_final,B_holdout_validation,FEM + Dijkstra without DEM closure,1,1,1,11.3,7.733333333333334,3.5666666666666664,3.0,2.066666666666667,0.9333333333333331
+B3_gwanak_long_subcritical_final,B_holdout_validation,Simple empirical score,1,1,1,11.3,13.074617934451886,1.7746179344518858,3.0,5.69782354798922,2.69782354798922
+B3_gwanak_long_subcritical_final,B_holdout_validation,Full FEM-Dijkstra-DEM screening model,1,1,1,11.3,12.98,1.6799999999999997,3.0,3.0,0.0

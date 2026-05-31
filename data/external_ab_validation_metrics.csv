@@ -1,6 +1,6 @@
 model,holdout_cases,holdout_accuracy,holdout_fines_loss_mae_percent,holdout_k_over_k0_mae
-Full FEM-Dijkstra-DEM screening model,1,1.0,1.8999999999999986,0.0
-FEM + Dijkstra without DEM closure,1,1.0,3.5666666666666664,0.9333333333333331
-Simple empirical score,1,1.0,5.061516103021166,2.9536132372849764
-Critical-gradient cutoff,1,0.0,10.100000000000001,2.05
-FEM-only hydraulic score,1,0.0,10.100000000000001,2.05
+Full FEM-Dijkstra-DEM screening model,3,1.0,1.0630084669177107,0.0
+Simple empirical score,3,1.0,2.995757822490243,1.6825724270310431
+FEM + Dijkstra without DEM closure,3,1.0,3.244444444444444,0.5
+FEM-only hydraulic score,3,0.6666666666666666,4.223906448232115,1.2497724640079428
+Critical-gradient cutoff,3,0.3333333333333333,7.600000000000001,1.5499999999999998

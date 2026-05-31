@@ -3,7 +3,7 @@
 Target journal: Computers and Geotechnics.
 
 Public repository declared by the manuscript:
-https://github.com/gabrielmontufar/article-126-internal-erosion-dem-fem/releases/tag/v1.0.2-cg-submission-20260531
+https://github.com/gabrielmontufar/article-126-internal-erosion-dem-fem/releases/tag/v1.0.3-cg-submission-20260531
 
 This package is a synthetic numerical-method benchmark and not an operational
 dam-safety model.
@@ -48,5 +48,6 @@ Additional external challenge added for the Computers and Geotechnics revision:
 - The source is Lee, Kim and Chung (2021), International Journal of Geo-Engineering, DOI 10.1186/s40703-021-00151-6.
 - This is a bounded external empirical challenge. It supports the need for a path/history-sensitive screening indicator because published long-term suffusion occurred below short-term critical-gradient values. It is not quantitative field validation and must not be described as operational dam-warning validation.
 
-Versioned release for this submission: https://github.com/gabrielmontufar/article-126-internal-erosion-dem-fem/releases/tag/v1.0.2-cg-submission-20260531
+Versioned release for this submission: https://github.com/gabrielmontufar/article-126-internal-erosion-dem-fem/releases/tag/v1.0.3-cg-submission-20260531
+
 
