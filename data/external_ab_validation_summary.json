@@ -1,0 +1,18 @@
+{
+  "validation_level_3_status": "closed",
+  "validation_level_4_status": "closed_for_screening_claim",
+  "validation_level_5_status": "closed_for_bounded_screening_claim",
+  "calibration_subset": "A_calibration",
+  "holdout_subset": "B_holdout_validation",
+  "holdout_case_count": 1,
+  "full_model_holdout_accuracy": 1.0,
+  "full_model_holdout_fines_loss_mae_percent": 1.8999999999999986,
+  "full_model_holdout_k_over_k0_mae": 0.0,
+  "best_baseline": "FEM + Dijkstra without DEM closure",
+  "best_baseline_holdout_accuracy": 1.0,
+  "best_baseline_holdout_fines_loss_mae_percent": 3.5666666666666664,
+  "best_baseline_holdout_k_over_k0_mae": 0.9333333333333331,
+  "strict_validation_comparison_score_mrnb_post_ab": 15,
+  "strict_total_mrnb_post_ab_validation": 92,
+  "scope_limit": "This is semi-blind external laboratory-state validation for the screening framework. It is not operational field validation of a complete dam-warning model."
+}

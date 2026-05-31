@@ -24,6 +24,7 @@ def main() -> None:
     run_script("hybrid_dem_fem_graph_benchmark.py")
     run_script("external_validation_lee2021.py")
     run_script("novelty_validation_scorecard.py")
+    run_script("external_ab_validation_baselines.py")
     print("[ok] all reproducibility scripts completed")
 
 

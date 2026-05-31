@@ -1,0 +1,6 @@
+case,split,model,observed_unstable,predicted_unstable,classification_correct,observed_fines_or_soil_loss_percent,predicted_fines_or_soil_loss_percent,absolute_fines_loss_error_percent,observed_k_over_k0,predicted_k_over_k0,absolute_k_over_k0_error
+B1_gwanak_long_subcritical,B_holdout_validation,Critical-gradient cutoff,1,0,0,11.3,1.2,10.100000000000001,3.0,0.95,2.05
+B1_gwanak_long_subcritical,B_holdout_validation,FEM-only hydraulic score,1,0,0,11.3,1.2,10.100000000000001,3.0,0.95,2.05
+B1_gwanak_long_subcritical,B_holdout_validation,FEM + Dijkstra without DEM closure,1,1,1,11.3,7.733333333333334,3.5666666666666664,3.0,2.066666666666667,0.9333333333333331
+B1_gwanak_long_subcritical,B_holdout_validation,Simple empirical score,1,1,1,11.3,16.361516103021167,5.061516103021166,3.0,5.953613237284976,2.9536132372849764
+B1_gwanak_long_subcritical,B_holdout_validation,Full FEM-Dijkstra-DEM screening model,1,1,1,11.3,13.2,1.8999999999999986,3.0,3.0,0.0

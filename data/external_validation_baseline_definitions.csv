@@ -1,0 +1,5 @@
+baseline,represents,why_needed,how_full_model_wins
+Critical-gradient cutoff,simple hydraulic rule,minimum comparator in internal erosion,detects the held-out subcritical long-term case missed by the cutoff
+FEM-only hydraulic score,hydraulic field without erosive connectivity,isolates the value added by Dijkstra connectivity,uses path persistence to classify the held-out long-term trajectory
+FEM + Dijkstra without DEM closure,connectivity without local discrete micro-closure,isolates the value added by the DEM closure,improves the quantitative permeability and fines-loss error
+Simple empirical score,regression using the hydraulic/path score only,tests whether the method is unnecessarily complex,reduces physical-metric error on the held-out case while retaining correct classification
