@@ -1,0 +1,7 @@
+Copyright (c) 2026 Gabriel Jesus Montufar Chiriboga
+
+Permission is granted to review, reproduce and evaluate the computational
+evidence supplied with the manuscript package for scholarly peer-review,
+editorial assessment and reproducibility checking. Redistribution or reuse
+outside that context requires permission from the author unless a separate
+public repository license is provided.

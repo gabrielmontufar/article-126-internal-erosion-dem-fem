@@ -1,0 +1,15 @@
+{
+  "claim_code_gap_closed": true,
+  "implemented_2d_continuum_solver": "linear triangular finite-element Darcy head solver",
+  "implemented_graph_algorithm": "Dijkstra lowest-cost path over finite cells from downstream exit to upstream source masks",
+  "implemented_dem_window": "deterministic bonded-particle micro-window with bond breakage, hydraulic drag, damping, porosity and permeability return",
+  "fem_nodes": 861,
+  "fem_triangles": 1600,
+  "dijkstra_warning_time_h": 17.0,
+  "global_surrogate_crossing_time_h": 31.0,
+  "synthetic_lead_interval_h": 14.0,
+  "final_dem_detached_fraction": 1.0,
+  "final_dem_broken_bond_fraction": 1.0,
+  "final_dem_returned_detachment_multiplier": 3.7,
+  "scope_limit": "This closes executable-method evidence for a synthetic benchmark; it is still not operational field validation."
+}
