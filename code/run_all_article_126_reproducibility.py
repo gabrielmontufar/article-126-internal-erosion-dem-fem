@@ -23,6 +23,7 @@ def main() -> None:
     run_script("reproduce_article_126_clean.py")
     run_script("hybrid_dem_fem_graph_benchmark.py")
     run_script("external_validation_lee2021.py")
+    run_script("novelty_validation_scorecard.py")
     print("[ok] all reproducibility scripts completed")
 
 

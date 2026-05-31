@@ -1,0 +1,3 @@
+method,tp,tn,fp,fn,accuracy,sensitivity,specificity,scope
+gradient_only_prediction,2,1,0,2,0.6,0.5,1.0,"screening classification of published laboratory states, not full dam validation"
+path_history_prediction,4,1,0,0,1.0,1.0,1.0,"screening classification of published laboratory states, not full dam validation"

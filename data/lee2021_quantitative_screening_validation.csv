@@ -1,0 +1,6 @@
+case,soil,test,reported_state,label_unstable,hydraulic_gradient,short_term_critical_gradient,fines_or_soil_loss_percent,k_over_k0,source_trace,i_over_critical,gradient_only_prediction,path_history_screening_score,path_history_prediction
+gap_short_critical,gap-graded silty sand,short-term stepwise,unstable,1,10.0,10.0,4.1,3.0,abrupt increase at i=10; loss 4.1%; k approx 3 k0,1.0,1,0.8232142857142857,1
+gap_long_subcritical,gap-graded silty sand,long-term constant gradient,unstable,1,5.0,10.0,14.0,2.0,long-term i=5; loss 14%; k maintained around 2 k0,0.5,0,0.67082541375001,1
+gwanak_short_precritical,well-graded Gwanak silty sand,short-term below critical,not internally unstable,0,30.0,35.0,1.2,0.95,"below i=30, k decreased despite 1.2% particle release",0.8571428571428571,0,0.36428571428571427,0
+gwanak_short_critical,well-graded Gwanak silty sand,short-term stepwise,unstable,1,35.0,35.0,5.1,1.2,sharp k increase at i=35; loss 5.1% at i=40; k approx 1.2 k0,1.0,1,0.5491561100701642,1
+gwanak_long_subcritical,well-graded Gwanak silty sand,long-term constant gradient,unstable,1,17.0,35.0,11.3,3.0,long-term i=17; abrupt k increase after about 15 days; loss 11.3%; k almost 3 k0,0.4857142857142857,0,0.7460714285714285,1
