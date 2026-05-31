@@ -1,1 +1,1 @@
-https://github.com/gabrielmontufar/article-126-internal-erosion-dem-fem
+https://github.com/gabrielmontufar/article-126-internal-erosion-dem-fem/releases/tag/v1.0.0-cg-submission-20260531
