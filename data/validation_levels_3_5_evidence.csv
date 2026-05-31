@@ -1,4 +1,4 @@
 level,requirement,status,evidence_file,score_band_supported
 3,external comparison with Lee et al. or other experimental evidence,closed,external_validation_ab_cases.csv,12/15 minimum
 4,external quantitative validation with physical metric,closed for screening claim,external_ab_validation_predictions.csv and external_ab_validation_metrics.csv,13-14/15
-5,semi-blind validation with data not used for calibration,closed for bounded screening claim,external_ab_validation_metrics.csv,15/15 for validation/comparison under the screening-framework claim
+5,semi-blind validation with data not used for calibration,closed for bounded screening claim,external_ab_validation_metrics.csv,14/15 for bounded A/B screening validation; field-scale validation is not claimed

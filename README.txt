@@ -3,10 +3,23 @@
 Target journal: Computers and Geotechnics.
 
 Public repository declared by the manuscript:
-https://github.com/gabrielmontufar/article-126-internal-erosion-dem-fem/releases/tag/v1.0.4-cg-scope-fit-20260531
+https://github.com/gabrielmontufar/article-126-internal-erosion-dem-fem/releases/tag/v1.0.5-novelty-lift-20260531
 
 This package is a synthetic numerical-method benchmark and not an operational
 dam-safety model.
+
+Novelty claim for the Computers and Geotechnics submission:
+
+- The contribution is a selective multiscale activation operator, not a routine
+  FEM, graph-search or DEM application in isolation.
+- A user-implemented continuum dam model supplies hydraulic and erosion state
+  variables; a Dijkstra graph converts those states into a connected
+  exit-to-source erosion corridor; and a bonded-particle DEM micro-window is
+  activated only on that corridor.
+- Component-ablation evidence compares the full FEM-Dijkstra-DEM screening
+  model against critical-gradient, FEM-only, FEM-Dijkstra-without-DEM and
+  empirical baselines, keeping the claim bounded to screening rather than
+  operational dam-safety prediction.
 
 Primary command for evaluators:
 
@@ -37,9 +50,16 @@ The key files for the MRNB novelty and validation/comparison criteria are:
 - `data/external_validation_baseline_definitions.csv`
 - `data/external_ab_validation_predictions.csv`
 - `data/external_ab_validation_metrics.csv`
+- `data/novelty_efficiency_metrics.csv`
 - `data/external_ab_validation_summary.json`
 - `data/validation_levels_3_5_evidence.csv`
 - `data/validation_editorial_sentence.txt`
+
+The novelty-efficiency file reports two ablation quantities requested by the
+novelty audit: `Connectivity Gain`, which measures the fines-loss MAE reduction
+from adding the Dijkstra path layer to the FEM-only baseline, and `DEM
+Activation Efficiency`, which measures the DEM-closure MAE reduction per
+activated Dijkstra-corridor domain fraction.
 
 Additional external challenge added for the Computers and Geotechnics revision:
 
@@ -48,6 +68,7 @@ Additional external challenge added for the Computers and Geotechnics revision:
 - The source is Lee, Kim and Chung (2021), International Journal of Geo-Engineering, DOI 10.1186/s40703-021-00151-6.
 - This is a bounded external empirical challenge. It supports the need for a path/history-sensitive screening indicator because published long-term suffusion occurred below short-term critical-gradient values. It is not quantitative field validation and must not be described as field-deployed operational dam-safety validation.
 
-Versioned release for this submission: https://github.com/gabrielmontufar/article-126-internal-erosion-dem-fem/releases/tag/v1.0.4-cg-scope-fit-20260531
+Versioned release for this submission: https://github.com/gabrielmontufar/article-126-internal-erosion-dem-fem/releases/tag/v1.0.5-novelty-lift-20260531
+
 
 

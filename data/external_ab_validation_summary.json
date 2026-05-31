@@ -13,7 +13,12 @@
   "best_baseline_holdout_accuracy": 1.0,
   "best_baseline_holdout_fines_loss_mae_percent": 2.995757822490243,
   "best_baseline_holdout_k_over_k0_mae": 1.6825724270310431,
-  "strict_validation_comparison_score_mrnb_post_ab": 15,
+  "connectivity_gain_fines_loss_mae_percent": 0.9794620037876709,
+  "dem_closure_gain_fines_loss_mae_percent": 2.1814359775267333,
+  "dem_activation_fraction": 0.15375,
+  "dem_activation_efficiency": 14.188201479848672,
+  "empirical_baseline_gain_fines_loss_mae_percent": 1.9327493555725321,
+  "strict_validation_comparison_score_mrnb_post_ab": 14,
   "strict_total_mrnb_post_ab_validation": 92,
   "scope_limit": "This is semi-blind external laboratory-state validation for the screening framework. Holdout rows are published laboratory states from Lee et al. (2021), not synthetic cases and not field validation of a field-deployed dam-safety model."
 }

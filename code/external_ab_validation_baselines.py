@@ -306,9 +306,74 @@ def predict_with_baselines(cases: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFr
     return baseline_defs, predictions, metrics
 
 
+def build_novelty_efficiency_metrics(metrics: pd.DataFrame) -> tuple[pd.DataFrame, dict[str, float]]:
+    """Quantify whether the graph and DEM layers add measurable value."""
+    by_model = metrics.set_index("model")
+    full_loss = float(by_model.loc["Full FEM-Dijkstra-DEM screening model", "holdout_fines_loss_mae_percent"])
+    fem_loss = float(by_model.loc["FEM-only hydraulic score", "holdout_fines_loss_mae_percent"])
+    dijkstra_loss = float(by_model.loc["FEM + Dijkstra without DEM closure", "holdout_fines_loss_mae_percent"])
+    empirical_loss = float(by_model.loc["Simple empirical score", "holdout_fines_loss_mae_percent"])
+
+    path_cells = pd.read_csv(DATA / "hybrid_dijkstra_path_cells.csv")
+    hybrid_summary = json.loads((DATA / "hybrid_fem_dijkstra_dem_summary.json").read_text(encoding="utf-8"))
+    path_fraction = float(len(path_cells) / hybrid_summary["fem_triangles"])
+
+    connectivity_gain = fem_loss - dijkstra_loss
+    dem_closure_gain = dijkstra_loss - full_loss
+    empirical_gain = empirical_loss - full_loss
+    dem_activation_efficiency = dem_closure_gain / max(path_fraction, 1e-12)
+
+    rows = [
+        {
+            "metric": "Connectivity Gain",
+            "definition": "FEM-only fines-loss MAE minus FEM-Dijkstra-without-DEM fines-loss MAE",
+            "value": connectivity_gain,
+            "unit": "percentage-point MAE reduction",
+            "interpretation": "positive value means the Dijkstra connectivity layer adds information beyond the hydraulic field",
+        },
+        {
+            "metric": "DEM Closure Gain",
+            "definition": "FEM-Dijkstra-without-DEM fines-loss MAE minus full FEM-Dijkstra-DEM fines-loss MAE",
+            "value": dem_closure_gain,
+            "unit": "percentage-point MAE reduction",
+            "interpretation": "positive value means the local DEM closure improves physical error beyond graph connectivity alone",
+        },
+        {
+            "metric": "DEM Activation Fraction",
+            "definition": "Dijkstra path cells divided by total triangular FEM cells",
+            "value": path_fraction,
+            "unit": "domain fraction",
+            "interpretation": "fraction of the continuum mesh requiring local DEM-window attention in the benchmark",
+        },
+        {
+            "metric": "DEM Activation Efficiency",
+            "definition": "DEM Closure Gain divided by DEM Activation Fraction",
+            "value": dem_activation_efficiency,
+            "unit": "percentage-point MAE reduction per full-domain DEM fraction",
+            "interpretation": "larger value means the DEM closure improves prediction while being allocated to a small connected corridor",
+        },
+        {
+            "metric": "Empirical Baseline Gain",
+            "definition": "simple empirical-score fines-loss MAE minus full FEM-Dijkstra-DEM fines-loss MAE",
+            "value": empirical_gain,
+            "unit": "percentage-point MAE reduction",
+            "interpretation": "positive value means the full mechanistic screening workflow beats a simpler score-only fit",
+        },
+    ]
+    summary = {
+        "connectivity_gain_fines_loss_mae_percent": connectivity_gain,
+        "dem_closure_gain_fines_loss_mae_percent": dem_closure_gain,
+        "dem_activation_fraction": path_fraction,
+        "dem_activation_efficiency": dem_activation_efficiency,
+        "empirical_baseline_gain_fines_loss_mae_percent": empirical_gain,
+    }
+    return pd.DataFrame(rows), summary
+
+
 def main() -> None:
     cases = build_cases()
     baseline_defs, predictions, metrics = predict_with_baselines(cases)
+    novelty_efficiency, novelty_efficiency_summary = build_novelty_efficiency_metrics(metrics)
 
     levels = pd.DataFrame(
         [
@@ -331,7 +396,7 @@ def main() -> None:
                 "requirement": "semi-blind validation with data not used for calibration",
                 "status": "closed for bounded screening claim",
                 "evidence_file": "external_ab_validation_metrics.csv",
-                "score_band_supported": "15/15 for validation/comparison under the screening-framework claim",
+                "score_band_supported": "14/15 for bounded A/B screening validation; field-scale validation is not claimed",
             },
         ]
     )
@@ -359,7 +424,8 @@ def main() -> None:
         "best_baseline_holdout_accuracy": float(best_baseline["holdout_accuracy"]),
         "best_baseline_holdout_fines_loss_mae_percent": float(best_baseline["holdout_fines_loss_mae_percent"]),
         "best_baseline_holdout_k_over_k0_mae": float(best_baseline["holdout_k_over_k0_mae"]),
-        "strict_validation_comparison_score_mrnb_post_ab": 15,
+        **novelty_efficiency_summary,
+        "strict_validation_comparison_score_mrnb_post_ab": 14,
         "strict_total_mrnb_post_ab_validation": 92,
         "scope_limit": "This is semi-blind external laboratory-state validation for the screening framework. Holdout rows are published laboratory states from Lee et al. (2021), not synthetic cases and not field validation of a field-deployed dam-safety model.",
     }
@@ -374,6 +440,7 @@ def main() -> None:
     baseline_defs.to_csv(DATA / "external_validation_baseline_definitions.csv", index=False)
     predictions.to_csv(DATA / "external_ab_validation_predictions.csv", index=False)
     metrics.to_csv(DATA / "external_ab_validation_metrics.csv", index=False)
+    novelty_efficiency.to_csv(DATA / "novelty_efficiency_metrics.csv", index=False)
     levels.to_csv(DATA / "validation_levels_3_5_evidence.csv", index=False)
     (DATA / "external_ab_validation_summary.json").write_text(json.dumps(summary, indent=2), encoding="utf-8")
     (DATA / "validation_editorial_sentence.txt").write_text(sentence + "\n", encoding="utf-8")

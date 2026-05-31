@@ -1,0 +1,6 @@
+metric,definition,value,unit,interpretation
+Connectivity Gain,FEM-only fines-loss MAE minus FEM-Dijkstra-without-DEM fines-loss MAE,0.9794620037876709,percentage-point MAE reduction,positive value means the Dijkstra connectivity layer adds information beyond the hydraulic field
+DEM Closure Gain,FEM-Dijkstra-without-DEM fines-loss MAE minus full FEM-Dijkstra-DEM fines-loss MAE,2.1814359775267333,percentage-point MAE reduction,positive value means the local DEM closure improves physical error beyond graph connectivity alone
+DEM Activation Fraction,Dijkstra path cells divided by total triangular FEM cells,0.15375,domain fraction,fraction of the continuum mesh requiring local DEM-window attention in the benchmark
+DEM Activation Efficiency,DEM Closure Gain divided by DEM Activation Fraction,14.188201479848672,percentage-point MAE reduction per full-domain DEM fraction,larger value means the DEM closure improves prediction while being allocated to a small connected corridor
+Empirical Baseline Gain,simple empirical-score fines-loss MAE minus full FEM-Dijkstra-DEM fines-loss MAE,1.9327493555725321,percentage-point MAE reduction,positive value means the full mechanistic screening workflow beats a simpler score-only fit
