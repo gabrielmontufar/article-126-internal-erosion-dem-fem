@@ -1,9 +1,22 @@
-﻿Reproducible computational evidence for Article 126.
+﻿# Reproducible computational evidence for Article 126
 
 Target journal: Computers and Geotechnics.
 
+Final manuscript title:
+
+Selective FEM-Dijkstra-DEM activation algorithm for internal-erosion pathway
+screening in earth dams
+
 Public repository declared by the manuscript:
-https://github.com/gabrielmontufar/article-126-internal-erosion-dem-fem/releases/tag/v1.0.7-theory-proof-20260531
+https://github.com/gabrielmontufar/article-126-internal-erosion-dem-fem
+
+Final Computers and Geotechnics upload package:
+
+`submission/Computers_and_Geotechnics_20260609/` 
+
+The final package includes the titled manuscript DOCX, cover letter,
+declaration of interest, highlights, figures, tables, supplementary ZIP, portal
+metadata, upload checklist, and upload validation manifest.
 
 This package is a synthetic numerical-method benchmark and not an operational
 dam-safety model.
@@ -75,7 +88,8 @@ Additional external challenge added for the Computers and Geotechnics revision:
 - The source is Lee, Kim and Chung (2021), International Journal of Geo-Engineering, DOI 10.1186/s40703-021-00151-6.
 - This is a bounded external empirical challenge. It supports the need for a path/history-sensitive screening indicator because published long-term suffusion occurred below short-term critical-gradient values. It is not quantitative field validation and must not be described as field-deployed operational dam-safety validation.
 
-Versioned release for this submission: https://github.com/gabrielmontufar/article-126-internal-erosion-dem-fem/releases/tag/v1.0.7-theory-proof-20260531
+Versioned release for the previous theory-proof package: https://github.com/gabrielmontufar/article-126-internal-erosion-dem-fem/releases/tag/v1.0.7-theory-proof-20260531
+
 
 
 

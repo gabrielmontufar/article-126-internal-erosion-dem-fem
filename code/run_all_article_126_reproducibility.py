@@ -25,6 +25,15 @@ def main() -> None:
     run_script("external_validation_lee2021.py")
     run_script("novelty_validation_scorecard.py")
     run_script("external_ab_validation_baselines.py")
+    run_script("compute_composite_holdout_residual_ranking.py")
+    run_script("external_validation_zhu2025_second_family_acquisition_gate.py")
+    run_script("external_primary_suffusion_experiment_acquisition_gate.py")
+    run_script("external_chang2012_mechanism_gate.py")
+    run_script("external_chang2012_fulltext_digitization_gate.py")
+    run_script("external_wan2025_internal_erosion_endpoint_gate.py")
+    run_script("external_validation_ke_takahashi2012_second_family_residuals.py")
+    run_script("external_full_trajectory_validation.py")
+    run_script("novelty_positioning_gate.py")
     print("[ok] all reproducibility scripts completed")
 
 

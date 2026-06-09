@@ -1,0 +1,37 @@
+{
+  "validation_type": "Lee A/B composite holdout residual ranking",
+  "source_prediction_file": "external_ab_validation_predictions.csv",
+  "holdout_split": "B_holdout_validation",
+  "observed_fines_loss_range_percent": 9.7,
+  "observed_k_over_k0_range": 1.0,
+  "best_model": "Full FEM-Dijkstra-DEM screening model",
+  "best_score": 0.10958850174409387,
+  "ranking": [
+    {
+      "rank": 1,
+      "model": "Full FEM-Dijkstra-DEM screening model",
+      "score": 0.10958850174409387
+    },
+    {
+      "rank": 2,
+      "model": "FEM + Dijkstra without DEM closure",
+      "score": 0.8344788087056128
+    },
+    {
+      "rank": 3,
+      "model": "Simple empirical score",
+      "score": 1.9914134396589032
+    },
+    {
+      "rank": 4,
+      "model": "FEM-only hydraulic score",
+      "score": 2.018560070354896
+    },
+    {
+      "rank": 5,
+      "model": "Critical-gradient cutoff",
+      "score": 3.000171821305842
+    }
+  ],
+  "claim_boundary": "Residual ranking is computed only on the Lee et al. B holdout screening cases. It is not a Deng validation, field validation, or operational dam-safety validation."
+}

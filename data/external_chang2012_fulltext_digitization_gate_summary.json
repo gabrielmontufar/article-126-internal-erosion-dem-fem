@@ -1,0 +1,13 @@
+{
+  "status": "PASS_FULLTEXT_ROUTE_DIGITIZATION_REQUIRED_NOT_RESIDUAL_VALIDATION",
+  "source": "Chang 2012 doctoral thesis, HKUST Institutional Repository",
+  "record_url": "https://repository.hkust.edu.hk/ir/Record/1783.1-7478",
+  "pdf_url": "https://repository.hkust.edu.hk/ir/bitstream/1783.1-7478/1/b1165745.pdf",
+  "doi_or_identifier": "10.14711/thesis-b1165745",
+  "pdf_size_bytes_reported_by_repository": 8337015,
+  "rights_note": "Copyrighted to the author. Reproduction is prohibited without the author's prior written consent.",
+  "digitization_target_count": 4,
+  "claim_enabled_now": "verified public full-text route and target map for audited Chang 2012 residual digitization",
+  "claim_blocked_now": "second independent quantitative residual validation until curves are digitized with uncertainty records or author/repository numeric data are obtained",
+  "rights_boundary": "do not package or reproduce the PDF or full thesis tables; use source locator, derived residual metrics, and permission/data-request records for submission"
+}

@@ -1,0 +1,10 @@
+﻿Target journal: Computers and Geotechnics
+Submission route: Subscription/traditional; do not select paid Open Access unless intentionally requested.
+Article type: Research article
+Title: Selective FEM-Dijkstra-DEM activation algorithm for internal-erosion pathway screening in earth dams
+Author: Gabriel Jesus Montufar Chiriboga
+Manuscript file to upload: Selective FEM-Dijkstra-DEM activation algorithm for internal-erosion pathway screening in earth dams.docx
+Cover letter file to upload: Cover Letter Computers and Geotechnics Q1 final.docx
+Repository: https://github.com/gabrielmontufar/article-126-internal-erosion-dem-fem
+Claim boundary: reproducible pathway-screening and selective multiscale activation algorithm; not calibrated flow-rate modelling, failure-time prediction, comparison with an in-service dam, or Sterpi/Chang/Zhu residual closure.
+Data rights: Alvkarleby V2 is CC BY 4.0; restricted PDFs/figures are not redistributed.

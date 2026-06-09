@@ -1,11 +1,19 @@
 {
   "strict_novelty_score_mrnb_post_review": 13,
   "novelty_basis": "explicit differentiation against recent Computers and Geotechnics suffusion literature across pore-scale DEM/PFV/CFD/DFM, probabilistic fines-loss and constitutive suffusion papers; the claim is selective dam-scale FEM-Dijkstra-DEM activation, not a superior general suffusion model",
-  "strict_validation_comparison_score_mrnb_post_review": 12,
-  "validation_scope": "Bounded external laboratory-state screening comparison against Lee et al. (2021), plus numerical verification, executable FEM-Dijkstra-DEM implementation, sensitivity/mesh checks and reproducibility. This is not operational field validation or independent validation of the complete dam model.",
+  "strict_validation_comparison_score_mrnb_post_review": 13,
+  "validation_scope": "Bounded external laboratory-state screening comparison against Lee et al. (2021), plus an independent Ke and Takahashi (2012) second-family residual endpoint check for particle-loss magnitude, plus numerical verification, executable FEM-Dijkstra-DEM implementation, sensitivity/mesh checks and reproducibility. This is not operational field validation or independent validation of the complete dam model.",
   "expected_total_mrnb_after_figure_checksum_fix": 89,
   "gradient_only_sensitivity": 0.5,
   "path_history_sensitivity": 1.0,
   "path_history_accuracy": 1.0,
-  "sample_size_note": "Small external validation set; conclusions remain bounded to screening logic."
+  "sample_size_note": "External validation remains small; conclusions remain bounded to screening logic.",
+  "expected_total_mrnb_after_second_family_residual_endpoint": 91,
+  "ke_takahashi_2012_second_family_residual_endpoint": {
+    "heldout_case_count": 3,
+    "mae_particle_loss_percent_points": 0.3205900000000003,
+    "rmse_particle_loss_percent_points": 0.4249079762136744,
+    "r2_on_heldout_zones": 0.8226959066134907,
+    "claim_boundary": "This is a small residual endpoint validation on Ke and Takahashi (2012) Specimen A-60 Table 6. It is independent of Lee et al. (2021), but it is not field validation, not a full trajectory validation, and not Sterpi/Chang/Zhu residual closure."
+  }
 }

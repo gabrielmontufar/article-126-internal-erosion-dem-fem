@@ -1,0 +1,14 @@
+Subject: Request for primary suffusion experiment data for reproducible residual validation
+
+Dear [Author/Repository Contact],
+
+I am preparing a reproducible computational geotechnics validation package for a suffusion screening method. I am looking for machine-readable or rights-safe tabulated data from primary suffusion experiments, especially hydraulic-gradient stages and cumulative fines-loss/eroded-mass histories.
+
+Minimum useful fields:
+- time, loading step, or hydraulic-gradient stage;
+- imposed hydraulic gradient or flow condition;
+- cumulative eroded fines mass, fines-loss ratio, or equivalent response;
+- initial fines content/distribution, density/void ratio, and specimen notes;
+- permeability/flow evolution if available.
+
+The intended use is a cited residual comparison with RMSE/MAE and clear limits. If redistribution is not permitted, I can document the acquisition route and publish only derived summary metrics with proper attribution.

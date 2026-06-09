@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import json
 import math
@@ -427,7 +427,7 @@ def main() -> None:
         **novelty_efficiency_summary,
         "strict_validation_comparison_score_mrnb_post_ab": 14,
         "strict_total_mrnb_post_ab_validation": 92,
-        "scope_limit": "This is semi-blind external laboratory-state validation for the screening framework. Holdout rows are published laboratory states from Lee et al. (2021), not synthetic cases and not field validation of a field-deployed dam-safety model.",
+        "scope_limit": "This is semi-blind external laboratory-state validation for the screening framework. Holdout rows are published laboratory states from Lee et al. (2021), not synthetic cases and not field validation of a deployed dam-safety model.",
     }
     sentence = (
         "The screening model was calibrated only with subset A and validated against subset B, "

@@ -1,0 +1,12 @@
+{
+  "status": "PRIMARY_DATA_EXTRACTION_REQUIRED",
+  "primary_targets": [
+    "Sterpi_2003",
+    "Chang_2012",
+    "Zhu_2025_validation_sources"
+  ],
+  "claim_enabled_now": "auditable acquisition route for primary suffusion experiment residual validation",
+  "claim_blocked_now": "second independent residual validation against primary fines-loss experiments",
+  "minimum_acceptance_rule": "A source must provide at least time/stage, hydraulic gradient or flow condition, cumulative fines-loss or eroded-mass response, and initial specimen state. Digitized curves require an uncertainty record and must not be labeled raw data.",
+  "why_this_matters_for_q1_high": "Lee A/B validation is already useful but small. A second residual-style primary-experiment family would materially reduce Q1 reviewer risk without depending on the closed Zhu 2025 article."
+}

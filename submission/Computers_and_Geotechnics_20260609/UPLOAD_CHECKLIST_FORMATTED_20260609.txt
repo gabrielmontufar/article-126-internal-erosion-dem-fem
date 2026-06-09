@@ -1,0 +1,14 @@
+﻿UPLOAD CHECKLIST - Computers and Geotechnics final 20260609
+
+Upload these files:
+[ ] Selective FEM-Dijkstra-DEM activation algorithm for internal-erosion pathway screening in earth dams.docx
+[ ] Cover Letter Computers and Geotechnics Q1 final.docx
+[ ] Declaration of Interest Computers and Geotechnics Q1 final.docx
+[ ] Highlights Computers and Geotechnics Q1 final.docx
+[ ] Figure 1-9 PNG files
+[ ] Article 126 tables.xlsx
+[ ] hybrid_fem_dijkstra_dem_tables.xlsx
+[ ] article_126_Q1_final_clean_supplementary_material.zip
+[ ] github_repository_url.txt
+
+Use the subscription/traditional route unless paid Open Access is intentionally requested.

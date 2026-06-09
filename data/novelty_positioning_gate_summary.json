@@ -1,0 +1,18 @@
+{
+  "status": "PASS_Q1_NOVELTY_POSITIONING_WITH_BOUNDED_SECOND_FAMILY_RESIDUAL_ENDPOINT",
+  "positioning_rows": 8,
+  "claim_rows": 5,
+  "mandatory_claims": [
+    "C1",
+    "C2",
+    "C3"
+  ],
+  "mandatory_claims_pass": true,
+  "method_family_count": 8,
+  "strongest_novelty_claim": "selective graph-guided DEM activation operator for dam-scale internal-erosion screening",
+  "novelty_failed_if_framed_as": "generic FEM plus Dijkstra plus DEM integration",
+  "claim_enabled_now": "Q1 novelty positioning for an activation/screening operator with ablation-backed algorithmic role",
+  "claim_blocked_now": "universal suffusion physics, residual validation against Sterpi/Chang/Zhu, field validation, or operational safety forecast",
+  "residual_validation_now": "Lee A/B laboratory-state validation plus Ke and Takahashi (2012) second-family residual endpoint check; Sterpi/Chang/Zhu residual closure remains blocked",
+  "q1_high_status": "NOVELTY_POSITIONING_STRENGTHENED_WITH_BOUNDED_SECOND_FAMILY_RESIDUAL_ENDPOINT"
+}

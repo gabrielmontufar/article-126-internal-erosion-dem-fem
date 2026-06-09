@@ -1,0 +1,34 @@
+{
+  "status": "PASS_OPEN_PRIMARY_ENDPOINT_DIRECTIONAL_GATE_NOT_SUFFUSION_RESIDUAL_VALIDATION",
+  "source_id": "Wan_Pan_Luo_Peng_2025_SciRep",
+  "source": "Wan, Pan, Luo and Peng (2025), Scientific Reports",
+  "title": "Experimental study on the impact of water flow velocity on internal erosion of granite residual soil",
+  "doi": "10.1038/s41598-025-06012-x",
+  "public_locator": "https://www.nature.com/articles/s41598-025-06012-x",
+  "rights_note": "Open-access article; this package stores only source-reported endpoint values and derived metrics.",
+  "source_basis": "Scientific Reports conclusion text reports wetting-front arrival times at 100 cm and cumulative fine-particle loss over 90 min for 25, 50 and 100 L/H flow conditions.",
+  "case_count": 3,
+  "flow_rates_l_per_h": [
+    25.0,
+    50.0,
+    100.0
+  ],
+  "wetting_front_arrival_100cm_min": [
+    29.89,
+    24.93,
+    21.78
+  ],
+  "cumulative_fine_particle_loss_90min_g": [
+    202.61,
+    226.99,
+    252.33
+  ],
+  "all_directional_metrics_pass": true,
+  "spearman_flow_wetting_time": -1.0,
+  "spearman_flow_cumulative_loss": 1.0,
+  "wetting_time_slope_min_per_l_per_h": -0.10168571428571428,
+  "cumulative_loss_slope_g_per_l_per_h": 0.6406285714285714,
+  "claim_enabled_now": "open primary endpoint support that the screening operator must preserve flow-rate-sensitive acceleration of wetting-front arrival and increased cumulative fine-particle loss",
+  "claim_blocked_now": "second-family suffusion residual validation against Sterpi/Chang/Zhu; calibrated erosion-path prediction; raw trajectory validation",
+  "ethical_constraint": "use as a limited endpoint directionality gate only; do not label as raw data, field validation, or Chang/Sterpi/Zhu residual validation"
+}

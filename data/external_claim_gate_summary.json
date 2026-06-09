@@ -1,0 +1,17 @@
+{
+  "status": "PASS_BOUNDED_FIELD_SCALE_AND_SECOND_FAMILY_EVIDENCE",
+  "field_scale_status": "PASS_FIELD_SCALE_TEST_BED_COMPARISON_WITH_LIMITS",
+  "field_scale_metrics": {
+    "spearman_predicted_vs_observed_section_score": 0.4285714285714286,
+    "top2_section_hit_fraction": 0.0,
+    "mean_absolute_section_proportion_error": 0.09103116811775747,
+    "relative_centroid_error": 0.04197014873268323
+  },
+  "ke_takahashi_status": "PASS_SECOND_FAMILY_RESIDUAL_VALIDATION_WITH_LIMITS",
+  "sterpi_status": "LEGAL_FULL_TEXT_REQUIRED_FOR_RESIDUAL_CLOSURE",
+  "chang_status": "FULLTEXT_ROUTE_DIGITIZATION_REQUIRED_FOR_QUANTITATIVE_TRAJECTORY_CLOSURE",
+  "zhu_status": "FULL_TEXT_REQUIRED_FOR_RESIDUAL_CLOSURE",
+  "claim_allowed": "bounded field-scale experimental test-bed comparison, Lee A/B laboratory-state validation, Ke and Takahashi second-family residual endpoint check, and rights-safe acquisition routes for Sterpi/Chang/Zhu",
+  "claim_forbidden": "unbounded operational safety forecast, complete erosion trajectory validation without observed continuous trajectories, or Sterpi/Chang/Zhu residual closure without legal full-text digitization",
+  "review_benchmark_effect": "strengthens validation evidence beyond Lee plus Ke by adding a reproducible field-scale test-bed comparison; does not by itself justify unbounded final-readiness claims"
+}

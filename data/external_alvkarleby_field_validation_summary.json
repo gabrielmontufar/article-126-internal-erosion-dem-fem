@@ -1,0 +1,24 @@
+{
+  "status": "PASS_FIELD_SCALE_TEST_BED_COMPARISON_WITH_LIMITS",
+  "source_id": "Alvkarleby_Mendeley_V2",
+  "doi": "10.17632/zhfx2g7s7b.2",
+  "license": "CC BY 4.0",
+  "seepage_rows": 7640,
+  "section_day_rows": 7640,
+  "turbidity_rows": 9,
+  "section_count": 8,
+  "spearman_predicted_vs_observed_section_score": 0.4285714285714286,
+  "top2_section_hit_fraction": 0.0,
+  "mean_absolute_section_proportion_error": 0.09103116811775747,
+  "relative_centroid_error": 0.04197014873268323,
+  "predicted_centroid_relative_x": 0.5681159291318977,
+  "observed_centroid_relative_x": 0.5261457803992144,
+  "claim_enabled_now": "field-scale experimental test-bed comparison for relative section ranking and pathway-envelope localization",
+  "claim_boundary": "\u00c3\u201elvkarleby V2 supports relative seepage/turbidity and section-ranking comparison only; it is not a calibrated absolute-discharge validation, operational safety forecast, or validation on a natural operational dam",
+  "seepage_parse": {
+    "cache": "external_alvkarleby_section_day_metrics.csv"
+  },
+  "turbidity_parse": {
+    "cache": "external_alvkarleby_turbidity_long.csv"
+  }
+}

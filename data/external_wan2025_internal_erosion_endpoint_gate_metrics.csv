@@ -1,0 +1,8 @@
+metric,value,pass,claim_scope
+flow_order,strictly_increasing,True,input-condition ordering
+wetting_front_time_vs_flow,strictly_decreasing,True,higher flow should accelerate front arrival
+cumulative_loss_vs_flow,strictly_increasing,True,higher flow should increase cumulative erosion endpoint
+spearman_flow_wetting_time,-1.0,True,rank-order endpoint check
+spearman_flow_cumulative_loss,1.0,True,rank-order endpoint check
+wetting_time_slope_min_per_l_per_h,-0.10168571428571428,True,descriptive endpoint slope
+cumulative_loss_slope_g_per_l_per_h,0.6406285714285714,True,descriptive endpoint slope

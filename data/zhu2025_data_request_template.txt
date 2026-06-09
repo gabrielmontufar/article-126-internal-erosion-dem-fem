@@ -1,0 +1,19 @@
+Subject: Data request for suffusion fines-loss validation study
+
+Dear Dr. Zhu and co-authors,
+
+I am preparing a reproducible geotechnical benchmark on suffusion-induced fines-loss prediction and would like to compare against the validation experiments reported in:
+
+Zhu, Y.; Xu, S.; Yu, T.; Sun, H.; Jin, B.; Fan, D. (2025). A probabilistic model for predicting suffusion-induced fines loss. Computers and Geotechnics, 188, 107620. https://doi.org/10.1016/j.compgeo.2025.107620
+
+Would you be willing to share the tabulated validation data, or the numerical curves underlying the four validation experiments under constant and multi-stage hydraulic gradients? The most useful fields would be:
+
+- hydraulic-gradient stage and time/step;
+- cumulative eroded fines mass or fines-loss ratio;
+- initial fines content/distribution and relative density;
+- permeability or flow-related parameters used in the validation;
+- any published model outputs corresponding to the experimental curves.
+
+The data would be used only for a cited, reproducible residual comparison. If redistribution is not allowed, I can document the acquisition route and report only derived residual metrics with proper attribution.
+
+Sincerely,

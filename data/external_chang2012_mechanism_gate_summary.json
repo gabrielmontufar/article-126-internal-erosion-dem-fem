@@ -1,0 +1,11 @@
+{
+  "status": "PASS_EXTERNAL_MECHANISM_GATE_NOT_RESIDUAL_VALIDATION",
+  "source": "Chang 2012 doctoral thesis, HKUST Research Portal",
+  "doi_or_identifier": "10.14711/thesis-b1165745",
+  "public_locator": "https://researchportal.hkust.edu.hk/en/studentTheses/internal-erosion-and-overtopping-erosion-of-earth-dams-and-landsl/",
+  "mechanism_gate_count": 5,
+  "passed_mechanism_gate_count": 5,
+  "claim_enabled_now": "external mechanism support for stress-state-conditioned, phase-aware suffusion activation and primary-data acquisition variables",
+  "claim_blocked_now": "quantitative residual validation against Chang 2012 until legal full-text tables, curves, or author data are extracted and uncertainty-audited",
+  "ethical_constraint": "use this gate as mechanism and acquisition support only; do not cite it as calibrated residual validation"
+}

@@ -1,0 +1,21 @@
+{
+  "status": "DATA_EXTRACTION_REQUIRED",
+  "primary_candidate": "Zhu et al. 2025, Computers and Geotechnics 188:107620",
+  "doi": "10.1016/j.compgeo.2025.107620",
+  "why_it_matters": "Zhu et al. 2025 is a second independent fines-loss family because it reports a probabilistic model validated against four suffusion experiments.",
+  "verified_sources": [
+    {
+      "source": "ScienceDirect article page",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S0266352X25005695",
+      "evidence_used": "article identity, DOI, abstract-level validation statement, authorship, and data-curation metadata"
+    },
+    {
+      "source": "ResearchGate metadata page",
+      "url": "https://www.researchgate.net/publication/395303288_A_probabilistic_model_for_predicting_suffusion-induced_fines_loss",
+      "evidence_used": "metadata confirmation only; no numeric residual data used"
+    }
+  ],
+  "claim_boundary": "The current local package has metadata and abstract-level evidence only. It cannot claim second-family residual validation until numeric tables, supplemental data or digitized curves are acquired and audited.",
+  "proposed_next_script_after_data": "code/external_validation_zhu2025_second_family_residuals.py",
+  "proposed_next_output_after_data": "data/external_zhu2025_second_family_residuals.csv"
+}

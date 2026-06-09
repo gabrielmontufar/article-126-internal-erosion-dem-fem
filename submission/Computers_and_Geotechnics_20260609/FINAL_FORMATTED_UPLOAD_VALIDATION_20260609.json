@@ -1,0 +1,109 @@
+﻿{
+    "checked_at":  "2026-06-09T12:12:16",
+    "target_journal":  "Computers and Geotechnics",
+    "manuscript":  "Selective FEM-Dijkstra-DEM activation algorithm for internal-erosion pathway screening in earth dams.docx",
+    "cover_letter":  "Cover Letter Computers and Geotechnics Q1 final.docx",
+    "file_count":  20,
+    "files":  [
+                  {
+                      "name":  "Article 126 tables.xlsx",
+                      "bytes":  10267,
+                      "sha256":  "116A72A867246D71C4AB6762B115E77D18F0A20DF2315BAF85C33A440D08177A"
+                  },
+                  {
+                      "name":  "article_126_Q1_final_clean_supplementary_material.zip",
+                      "bytes":  1335598,
+                      "sha256":  "9965DE67CAC7595A7341B15FB871ED2B1758393513E1C68442CEE0FF6431CC08"
+                  },
+                  {
+                      "name":  "Cover Letter Computers and Geotechnics Q1 final.docx",
+                      "bytes":  10479,
+                      "sha256":  "A714BDAD0C45187C77046750E65CB67B4E98D3FC3F375050B95AB0572A2A38D8"
+                  },
+                  {
+                      "name":  "Declaration of Interest Computers and Geotechnics Q1 final.docx",
+                      "bytes":  11586,
+                      "sha256":  "51B130761452555D65688165582B0D3BF17B15D86014965BDD650CD54A7A8C95"
+                  },
+                  {
+                      "name":  "Figure 1 manufactured transport convergence.png",
+                      "bytes":  119053,
+                      "sha256":  "7935F893E255E03B62BC55916C12A892A0EA1169F635B975166EFCEEBDEFA3A3"
+                  },
+                  {
+                      "name":  "Figure 2 synthetic screening lead interval.png",
+                      "bytes":  136522,
+                      "sha256":  "A3E861FF89E86C6C707F77D7E8B42C382B2058EA94CC88DE05FA20B24199CF1A"
+                  },
+                  {
+                      "name":  "Figure 3 connectivity activated DEM window.png",
+                      "bytes":  113639,
+                      "sha256":  "5A4B1BEB8138AA6284346BA5B9F119D018B4B89A764FF66389CD275A7607C487"
+                  },
+                  {
+                      "name":  "Figure 4 critical gradient sensitivity.png",
+                      "bytes":  111342,
+                      "sha256":  "5A4B3527B3F11E17784AA9FE77A36CFC9189C65B911EA3C8C6D735778CD452E0"
+                  },
+                  {
+                      "name":  "Figure 5 classical threshold comparison.png",
+                      "bytes":  97068,
+                      "sha256":  "7369AB23EC11EB176007932E66F7448ACC0CF0E01DCDF03532540E1B137D069E"
+                  },
+                  {
+                      "name":  "Figure 6 fem dijkstra connectivity.png",
+                      "bytes":  115553,
+                      "sha256":  "04F0828E5B31284E20AA8EB580500C02128F78CB62E5DA674C2ADEF09DA2402F"
+                  },
+                  {
+                      "name":  "Figure 7 dijkstra erosion path.png",
+                      "bytes":  99201,
+                      "sha256":  "A4EA9A46CA2D5D9AB52ADB3BA82C266683491980AF8A6A5FE62A520CF1DE7C95"
+                  },
+                  {
+                      "name":  "Figure 8 dem micro window.png",
+                      "bytes":  118483,
+                      "sha256":  "F88C11B760E424E5732B53A3CB1F9D4CFE96973845BF2DF16694DDE4B045CE24"
+                  },
+                  {
+                      "name":  "Figure 9 novelty map continuum graph dem activation.png",
+                      "bytes":  172210,
+                      "sha256":  "DFBE6C1AC7415FA1B1E5C9ADF9A14D7B24173EC3B4798E0F31F8CAAFFFD71D29"
+                  },
+                  {
+                      "name":  "FINAL_FORMATTED_UPLOAD_VALIDATION_20260609.json",
+                      "bytes":  5251,
+                      "sha256":  "576CB1AB7147B35A55CF167169C808A396C7573CF8DE574831C77EA49F1AA504"
+                  },
+                  {
+                      "name":  "github_repository_url.txt",
+                      "bytes":  123,
+                      "sha256":  "5BDF7B437EA7DD16EFBDCA15BB2407913F5C7E75C52FDDFB9992C94463F4F80F"
+                  },
+                  {
+                      "name":  "Highlights Computers and Geotechnics Q1 final.docx",
+                      "bytes":  11578,
+                      "sha256":  "49E5C6B9DD7A60562F57FBA698FCD6517E5ACD869CAA90948C13FBD1DD4AD24B"
+                  },
+                  {
+                      "name":  "hybrid_fem_dijkstra_dem_tables.xlsx",
+                      "bytes":  33679,
+                      "sha256":  "9AC42D36710E36AC79B3B705E5D8B97BDE99238DB2561051EDC98793DFA35B77"
+                  },
+                  {
+                      "name":  "PORTAL_METADATA_FORMATTED_20260609.txt",
+                      "bytes":  948,
+                      "sha256":  "ACACDBF5B9D362B07E32B226EFC141C73C0C995EE4E9A7B894BFE50FFC67A1F6"
+                  },
+                  {
+                      "name":  "Selective FEM-Dijkstra-DEM activation algorithm for internal-erosion pathway screening in earth dams.docx",
+                      "bytes":  2116093,
+                      "sha256":  "F7A37CCD6D73D840C2D13B02CBBC058B7A1F90926EB47E163D8500B73311224E"
+                  },
+                  {
+                      "name":  "UPLOAD_CHECKLIST_FORMATTED_20260609.txt",
+                      "bytes":  648,
+                      "sha256":  "7464BC785560B59C2DC40C182BB8141C864C673940B74BDC2784BF00B804D5C3"
+                  }
+              ]
+}
